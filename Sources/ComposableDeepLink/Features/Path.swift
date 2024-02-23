@@ -1,5 +1,4 @@
 import Foundation
-import RegexBuilder
 
 public struct Path<Processing: DeepLinkProcessing>: DeepLinkProcessing {
     

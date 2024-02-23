@@ -1,6 +1,6 @@
 import Foundation
 
-typealias DeepLink = ComposableDeepLink
+public typealias DeepLink = ComposableDeepLink
 
 public struct ComposableDeepLink<Processing: DeepLinkProcessing>: DeepLinkProcessing {
     
