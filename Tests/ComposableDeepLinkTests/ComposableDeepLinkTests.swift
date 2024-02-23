@@ -12,7 +12,7 @@ final class ComposableDeepLinkTests: XCTestCase {
     
     func testSyntax() throws {
         let handleCalledExpectation = expectation(description: "root handle called")
-        let processor = DeepLink {
+        let processor = ComposableDeepLink {
             Handle {
                 handleCalledExpectation.fulfill()
                 return TestResult.foo
@@ -31,7 +31,7 @@ final class ComposableDeepLinkTests: XCTestCase {
         let invalidExpectation = expectation(description: "invalid scheme called")
         invalidExpectation.isInverted = true
         
-        let processor = DeepLink {
+        let processor = ComposableDeepLink {
             Scheme("valid") {
                 Handle {
                     validExpectation1.fulfill()
@@ -65,7 +65,7 @@ final class ComposableDeepLinkTests: XCTestCase {
         let invalidExpectation = expectation(description: "invalid not called")
         invalidExpectation.isInverted = true
         
-        let processor = DeepLink {
+        let processor = ComposableDeepLink {
             Host("example.com") {
                 Handle {
                     exampleExpectation.fulfill()
@@ -90,7 +90,7 @@ final class ComposableDeepLinkTests: XCTestCase {
         let invalidExpectation = expectation(description: "invalid not called")
         invalidExpectation.isInverted = true
         
-        let processor = DeepLink {
+        let processor = ComposableDeepLink {
             Path("foo/bar") {
                 Handle {
                     exampleExpectation.fulfill()
@@ -114,7 +114,7 @@ final class ComposableDeepLinkTests: XCTestCase {
         let exampleExpectation1 = expectation(description: "example handle called")
         let exampleExpectation2 = expectation(description: "example handle called")
         
-        let processor = DeepLink {
+        let processor = ComposableDeepLink {
             Path("/foo/:id/bar") { context in
                 Handle<TestResult> {
                     exampleExpectation1.fulfill()
