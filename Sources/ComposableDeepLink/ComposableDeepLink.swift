@@ -1,7 +1,5 @@
 import Foundation
 
-public typealias DeepLink = ComposableDeepLink
-
 public struct ComposableDeepLink<Processing: DeepLinkProcessing>: DeepLinkProcessing {
     
     private let processors: any Sequence<Processing>

@@ -15,7 +15,7 @@ It provides an approach to deep link processing, allowing you to define complex 
 You can integrate **ComposableDeepLink** into your project using:
 - Swift Package Manager (SPM)
     - Add the following dependency to your `Package.swift`
-        - `.package(url: "https://github.com/example/ComposableDeepLink", from:  "0.1.0")`
+        - `.package(url: "https://github.com/xxKRASHxx/composable-deep-link", from:  "0.1.0")`
   - add `ComposableDeepLink` to your target's dependencies.
 - Xcode project
     1. From the  **File**  menu, select  **Add Packages...**
@@ -27,13 +27,13 @@ Here's a simple example demonstrating how to use ComposableDeepLink to handle de
 ```swift
 import ComposableDeepLink // 1. Import Library
 
-enum DeepLinkResult { // 2. Define result type
+enum DeepLink { // 2. Define result type
   case foo(id: String)
   case bar
   case biz
 }
 
-let processor: DeepLinkResult = DeepLink { // 3. Compose handling
+let processor = ComposableDeepLink<DeepLink> { // 3. Compose handling
   Scheme("myapp") {
     Host("example.host.com") {
       Path("/foo/:id") { context in
