@@ -20,7 +20,7 @@ final class ComposableDeepLinkTests: XCTestCase {
         }
         
         _ = processor.handle(url: URL(string: "example.com")!)
-        wait(for: [handleCalledExpectation])
+        waitForExpectations(timeout: 1)
     }
     
     func testScheme() {
