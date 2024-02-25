@@ -4,7 +4,7 @@ public struct ComposableDeepLink<Processing: DeepLinkProcessing>: DeepLinkProces
     
     private let processors: any Sequence<Processing>
     
-    init(@ArrayBuilder<Processing> processors: () -> any Sequence<Processing>) {
+    public init(@ArrayBuilder<Processing> processors: () -> any Sequence<Processing>) {
         self.processors = processors()
     }
     
