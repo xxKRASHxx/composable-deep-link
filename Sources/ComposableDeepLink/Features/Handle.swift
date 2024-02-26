@@ -2,9 +2,9 @@ import Foundation
 
 public struct Handle<Result>: DeepLinkProcessing {
     
-    private let handler: () -> Result
+    private let handler: () -> Result?
     
-    public init(_ handler: @escaping () -> Result) {
+    public init(_ handler: @escaping () -> Result?) {
         self.handler = handler
     }
     
