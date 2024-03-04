@@ -6,7 +6,7 @@ let package = Package(
     name: "composable-deep-link",
     platforms: [
         .watchOS(.v4),
-        .iOS(.v12),
+        .iOS(.v16),
         .macOS(.v13),
     ],
     products: [
