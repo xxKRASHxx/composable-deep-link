@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "composable-deep-link",
     platforms: [
-        .watchOS(.v4),
+        .watchOS(.v5),
         .iOS(.v16),
         .macOS(.v13),
     ],
